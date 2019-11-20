@@ -1,0 +1,25 @@
+{
+  "name": "sao-pkg",
+  "version": "0.0.0",
+  "description": "Package SAO generator",
+  "repository": {
+    "url": "https://github.com/shimarulin/sao-pkg",
+    "type": "git"
+  },
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com> (https://github.com/shimarulin)",
+  "license": "MIT",
+  "files": [
+    "saofile.js",
+    "template"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "superb": "^1.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "sao": "^1.0.0"
+  }
+}
