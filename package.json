@@ -6,7 +6,7 @@
     "url": "https://github.com/shimarulin/sao-pkg",
     "type": "git"
   },
-  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com> (https://github.com/shimarulin)",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "license": "MIT",
   "files": [
     "saofile.js",
