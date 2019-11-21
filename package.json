@@ -2,22 +2,50 @@
   "name": "sao-pkg",
   "version": "0.0.0",
   "description": "Package SAO generator",
+  "license": "MIT",
   "repository": {
-    "url": "https://github.com/shimarulin/sao-pkg",
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/shimarulin/sao-pkg"
   },
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
-  "license": "MIT",
   "files": [
     "saofile.js",
     "template"
   ],
   "scripts": {
+    "format": "yarn format:json && yarn format:md && yarn format:pkg",
+    "format:json": "prettier --write '**/*.json'",
+    "format:md": "prettier --parser markdown --prose-wrap always --write '**/*.md'",
+    "format:pkg": "format-package --write",
     "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index -g",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.md": [
+      "prettier --parser markdown --prose-wrap always --write",
+      "git add"
+    ],
+    "**/package.json": [
+      "format-package --write",
+      "git add"
+    ]
   },
   "dependencies": {},
   "devDependencies": {
+    "format-package": "^5.2.0",
+    "husky": "^4.0.0-beta.5",
     "jest": "^24.9.0",
+    "lint-staged": "^10.0.0-beta.4",
+    "prettier": "^1.19.1",
     "sao": "^1.7.0"
   }
 }
