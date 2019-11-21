@@ -13,7 +13,7 @@
     "template"
   ],
   "scripts": {
-    "test": "ava"
+    "test": "jest"
   },
   "dependencies": {},
   "devDependencies": {
