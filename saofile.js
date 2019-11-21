@@ -1,5 +1,5 @@
 module.exports = {
-  prompts() {
+  prompts () {
     console.log(this.outFolder)
     return [
       {
@@ -11,7 +11,7 @@ module.exports = {
       {
         name: 'description',
         message: 'How would you descripe the new project',
-        default({ name }) {
+        default ({ name }) {
           return `${name} project`
         },
       },
@@ -29,12 +29,12 @@ module.exports = {
       },
       {
         name: 'origin',
-        message: `The Git repository of this package`,
+        message: 'The Git repository of this package',
         default: false,
       },
     ]
   },
-  actions() {
+  actions () {
     return [
       {
         type: 'add',
@@ -54,7 +54,7 @@ module.exports = {
       },
     ]
   },
-  async completed() {
+  async completed () {
     // this.gitInit()
     // await this.npmInstall()
     // this.showProjectTips()
