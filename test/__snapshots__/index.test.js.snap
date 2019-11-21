@@ -1,11 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`file list with use defaults 1`] = `
+exports[`use defaults 1`] = `
 Array [
   ".editorconfig",
-  ".gitattributes",
   ".gitignore",
   "LICENSE",
   "README.md",
+  "package.json",
 ]
+`;
+
+exports[`use defaults: package.json 1`] = `
+Object {
+  "author": "MOCK_USERNAME <mock@example.com>",
+  "name": "output",
+}
 `;

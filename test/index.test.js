@@ -11,7 +11,12 @@ const getPkg = (pkg, fields) => {
   }, {})
 }
 
-test('file list with use defaults', async () => {
+test('use defaults', async () => {
   const helper = await sao.mock({ generator })
   expect(helper.fileList).toMatchSnapshot()
+  expect(
+    getPkg(await helper.readFile(
+      'package.json'),
+      ['name', 'author'])
+  ).toMatchSnapshot('package.json')
 })
