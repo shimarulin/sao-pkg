@@ -14,8 +14,8 @@
   ],
   "scripts": {
     "format": "yarn format:json && yarn format:md && yarn format:pkg",
-    "format:json": "prettier --write '**/*.json'",
-    "format:md": "prettier --parser markdown --prose-wrap always --write '**/*.md'",
+    "format:json": "prettier --write \"**/*.json\"",
+    "format:md": "prettier --parser markdown --prose-wrap always --write \"**/*.md\"",
     "format:pkg": "format-package --write",
     "test": "jest"
   },
