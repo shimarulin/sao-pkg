@@ -1,6 +1,8 @@
 module.exports = {
   extends: [
     'standard',
+    'plugin:jest/recommended',
+    'plugin:jest/style',
   ],
   env: {
     node: true,

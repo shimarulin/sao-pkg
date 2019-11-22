@@ -2,3 +2,7 @@
 .DS_Store
 node_modules/
 *.log
+
+### ESLint rules
+!.eslintrc.js
+!.prettierrc.js
