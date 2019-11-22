@@ -2,22 +2,63 @@
   "name": "sao-pkg",
   "version": "0.0.0",
   "description": "Package SAO generator",
+  "license": "MIT",
   "repository": {
-    "url": "https://github.com/shimarulin/sao-pkg",
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/shimarulin/sao-pkg"
   },
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
-  "license": "MIT",
   "files": [
     "saofile.js",
     "template"
   ],
   "scripts": {
+    "format": "yarn format:json && yarn format:md && yarn format:pkg",
+    "format:json": "prettier --write \"**/*.json\"",
+    "format:md": "prettier --parser markdown --prose-wrap always --write \"**/*.md\"",
+    "format:pkg": "format-package --write",
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
     "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index -g",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "**/*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.md": [
+      "prettier --parser markdown --prose-wrap always --write",
+      "git add"
+    ],
+    "**/package.json": [
+      "format-package --write",
+      "git add"
+    ]
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.4",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "format-package": "^5.2.0",
+    "husky": "^4.0.0-beta.5",
     "jest": "^24.9.0",
+    "lint-staged": "^10.0.0-beta.4",
+    "prettier": "^1.19.1",
     "sao": "^1.7.0"
   }
 }
